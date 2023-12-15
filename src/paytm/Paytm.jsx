@@ -1,5 +1,8 @@
 import axios from "axios";
 import { CheckoutProvider, Checkout } from "paytm-blink-checkout-react";
+// import CheckoutProvider from "../components/checkout-provider";
+// import Checkout from "../components/checkout";
+
 import { useState } from "react";
 import InjectedCheckout from "./InjectedCheckout";
 
@@ -85,15 +88,17 @@ const Paytm = () => {
       </form>
       <br />
 
-      <CheckoutProvider
-        checkoutJsInstance={checkoutJsInstance}
-        openInPopup={true}
-        config={config}
-        env="PROD"
-      >
-        <InjectedCheckout />
-        <Checkout />
-      </CheckoutProvider>
+      {checkoutJsInstance && (
+        <CheckoutProvider
+          checkoutJsInstance={checkoutJsInstance}
+          openInPopup={true}
+          config={config}
+          env="PROD"
+        >
+          {/* <InjectedCheckout /> */}
+          <Checkout />
+        </CheckoutProvider>
+      )}
     </div>
   );
 };

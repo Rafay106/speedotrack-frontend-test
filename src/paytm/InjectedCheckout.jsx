@@ -1,5 +1,6 @@
 import React from "react";
-import { injectCheckout } from "paytm-blink-checkout-react";
+// import { injectCheckout } from "paytm-blink-checkout-react";
+import injectCheckout from "../components/inject-checkout";
 
 function InjectedCheckout(props) {
   const checkoutJsInstance = props.checkoutJsInstance;
